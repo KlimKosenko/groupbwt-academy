@@ -15,6 +15,8 @@ services:
       dockerfile: php.Dockerfile
     volumes:
       - ./src:/var/www/laravel
+    command: sh -c "chmod -R guo+w storage && php-fpm"
+
   mysql:
     image: mysql:8.0
     ports:
